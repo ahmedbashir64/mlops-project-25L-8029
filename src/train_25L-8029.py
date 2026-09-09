@@ -5,7 +5,7 @@ import joblib
 import os
 
 # Student ID: 25L-8029
-
+LEARNING_RATE = 0.1  # added hyperparameter
 def load_data(path="data/dataset.csv"):
     print("Loading dataset...")
     df = pd.read_csv(path)
