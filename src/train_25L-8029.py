@@ -14,6 +14,7 @@ def load_data(path="data/dataset.csv"):
 def train_model(df, target_col="price"):
     X = df.drop(columns=[target_col])
     y = df[target_col]
+    X = (X - X.mean()) / X.std()  # normalization step
     X = pd.get_dummies(X, drop_first=True)  # handle categorical cols simply
 
     X_train, X_test, y_train, y_test = train_test_split(
